@@ -19,3 +19,28 @@ to pay off your debt within the monthly debt budget
 -politelychaotic
 August 2024
 '''
+
+
+class Debt:
+    def __init__(self, principal, remainder, apr, budget, min=10, max=500, time):
+        self.principal = principal
+        self.remainder remainder
+        self.apr = apr
+        self.budget = budget
+        self.min = min
+        self.max = max
+        self.time = time
+
+    def annual_increase(self):
+        annual = self.principal * self.apr
+        return annual
+
+    def monthly_increase(self):
+        mpr = self.apr / 12
+        monthly = annual_increase() / 12
+        return monthly_accrual
+
+    def pay_schedule(self):
+        annual_budget = self.budget * 12
+        schedule = (self.time * self.apr + self.remainder) / annual_budget
+        
