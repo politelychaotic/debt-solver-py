@@ -20,6 +20,7 @@ to pay off your debt within the monthly debt budget
 August 2024
 '''
 
+import random
 
 class Debt:
     def __init__(self, principal, remainder, apr, budget, min=10, max=500, time):
@@ -30,6 +31,7 @@ class Debt:
         self.min = min
         self.max = max
         self.time = time
+        self.payopts = []
 
     def annual_increase(self):
         annual = self.principal * self.apr
@@ -43,4 +45,13 @@ class Debt:
     def pay_schedule(self):
         annual_budget = self.budget * 12
         schedule = (self.time * self.apr + self.remainder) / annual_budget
+        return schedule
+    
+    def find_optimal_schedule(self, schedule):
+        for i in range(50):
+            monthly_payment = random.randint(self.min, self.max)
+            if monthly_payment not in self.payopts:
+                self.payopts.append(monthly_payment)
+        for i in range(len(self.payopts)):
+            return
         
